@@ -1,0 +1,20 @@
+name: Primera Automatizacion
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.12
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint
+      run: |
+        make lint
+    - name: Test
+      run: |
+      make test
