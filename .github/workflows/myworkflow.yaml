@@ -18,4 +18,5 @@ jobs:
         make lint
     - name: Test
       run: |
+        . venv/bin/activate
         make test
